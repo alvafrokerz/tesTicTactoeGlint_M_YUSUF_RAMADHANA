@@ -9,25 +9,72 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<title>TicTacToe</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
+     <link rel="stylesheet" href="index.css">
     
 
 </head>
-<body>
-
-<h1>TicTacToe</h1>
- 
- <p id="demo"></p>
+<body  >
+<center>
+<h1>Tic-tac-toe</h1>
+ <h4> Name : M Yusuf Ramadhana </h4><br>
+  
 <div class="center-wrapper-parent">
-<h4>Name : M Yusuf Ramadhana</h4><br>
-<button onclick="location.reload()">Refresh Game</button><br><br>
-  <div class="canvas-wrapper" >
+</center>
+ 
+  <div id="playplayer" class="canvas-wrapper" >
     <canvas id="tic-tac-toe-board" class="center-v" style="background-color: #d6d6c2;"></canvas>
   </div>
 </div>
 
+<div id="playcomputer" class="canvas-wrapper" >
+<table id="table_game" style=" text-align: center;">
+
+      <tr><td class="td_game"><div id="cell0" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell1" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell2" onclick="cellClicked(this.id)" class="fixed"></div></td></tr>
+      <tr><td class="td_game"><div id="cell3" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell4" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell5" onclick="cellClicked(this.id)" class="fixed"></div></td></tr>
+      <tr><td class="td_game"><div id="cell6" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell7" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell8" onclick="cellClicked(this.id)" class="fixed"></div></td></tr>
+    </table>
+	</div>
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br>   
+   <div id="restart" title="Start new game" onclick="restartGame(true)"  ><span style="background-color: coral;">New Game</span></div>
+   <div id="restart" title="Start new game" onclick="location.reload()" ><span style="background-color: coral;">reset Game</span></div>
+    <table>
+      <tr><th class="th_list">Computer</th><th class="th_list" style="padding-right:10px;padding-left:10px">Draws</th><th class="th_list" style="padding-right:10px;padding-left:10px">Friend</th>
+	  <th class="th_list">Player</th></tr>
+      <tr><td class="td_list" id="computer_score">0</td><td class="td_list" style="padding-right:10px;padding-left:10px" id="tie_score">0</td><td class="td_list" id="friend_score">0</td><td class="td_list" id="player_score">0</td></tr>
+    </table>
+    <!-- The modal dialog for announcing the winner -->
+    <div id="winAnnounce" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('winAnnounce')">&times;</span>
+        <p id="winText"></p>
+      </div>
+    </div>
+    <!-- The dialog for getting feedback from the user -->
+    <div id="userFeedback" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="questionText"></p>
+        <p><button id="yesBtn">Yes</button>&nbsp;<button id="noBtn">No</button></p>
+      </div>
+    </div>
+    <!-- The options dialog -->
+    <div id="optionsDlg" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <h2>How would you like to play?</h2>
+		 <h3>Play with:</h3>
+          <label><input type="radio" name="friend" id="pp" value="x" checked>Player</label>
+          <label><input type="radio" name="friend" id="pc" value="o">Computer<br></label><br>
+         
+          <h3>Difficulty:</h3>
+          <label><input type="radio" name="difficulty" id="r0" value="0">easy&nbsp;</label>
+          <label><input type="radio" name="difficulty" id="r1" value="1" checked>hard</label><br>
+          
+		  <p><button id="okBtn" onclick="getOptions()">Play</button></p>
+      </div>
+    </div>
 </body>
  <script src="index.js"></script>
 </html> 
