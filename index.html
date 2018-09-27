@@ -21,12 +21,12 @@
   
 <div class="center-wrapper-parent">
 </center>
- 
+ <!-- using canvas -->
   <div id="playplayer" class="canvas-wrapper" >
     <canvas id="tic-tac-toe-board" class="center-v" style="background-color: #d6d6c2;"></canvas>
   </div>
 </div>
-
+<!-- using table -->
 <div id="playcomputer" class="canvas-wrapper" >
 <table id="table_game" style=" text-align: center;">
 
@@ -35,14 +35,16 @@
       <tr><td class="td_game"><div id="cell6" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell7" onclick="cellClicked(this.id)" class="fixed"></div></td><td class="td_game"><div id="cell8" onclick="cellClicked(this.id)" class="fixed"></div></td></tr>
     </table>
 	</div>
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br>   
-   <div id="restart" title="Start new game" onclick="restartGame(true)"  ><span style="background-color: coral;">New Game</span></div>
+   
+<div  class="restartcss">   
+   <div id="restart"title="Start new game" onclick="restartGame(true)"  ><span style="background-color: coral;">New Game</span></div><br>
    <div id="restart" title="Start new game" onclick="location.reload()" ><span style="background-color: coral;">reset Game</span></div>
     <table>
       <tr><th class="th_list">Computer</th><th class="th_list" style="padding-right:10px;padding-left:10px">Draws</th><th class="th_list" style="padding-right:10px;padding-left:10px">Friend</th>
 	  <th class="th_list">Player</th></tr>
       <tr><td class="td_list" id="computer_score">0</td><td class="td_list" style="padding-right:10px;padding-left:10px" id="tie_score">0</td><td class="td_list" id="friend_score">0</td><td class="td_list" id="player_score">0</td></tr>
     </table>
+	</div>
     <!-- The modal dialog for announcing the winner -->
     <div id="winAnnounce" class="modal">
       <!-- Modal content -->
